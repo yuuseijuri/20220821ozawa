@@ -46,26 +46,33 @@
       padding: 8px 16px;
       transition: 0.5s;
     }
+    .contact {
+      width: 100%;
+      height: 60%;
+      
+    }
     .contact_form {
       width: 100%;
-      height: 20vh;
-      padding: 5px;
       margin-top: 25px;
+      
     }
-    .list1, .text1 {
+    .list1 {
       width: 30%;
+      padding: 5px;
       text-align: center;
-      background-color: ;
+      
     }
-    .list2, .text2 {
+    .list2 {
       width: 50%;
       text-align: center;
-      background-color: ;
+      
     }
-    .list3, .list4, .text3, .text4 {
+    .list3, .list4 {
       width: 10%;
       text-align: center;
     }
+    
+    
     .update_btn {
       border: 2px solid #FFA500;
       border-radius: 5px;
@@ -108,32 +115,36 @@
         <input class="create_btn" type="submit" value="追加">
       </form>
   </div>
-  <table class="contact_form">
-    <tr>
-      <th class="list1">作成日</th>
-      <th class="list2">タスク名</th>
-      <th class="list3">更新</th>
-      <th class="list4">削除</th>
-    </tr>
-    @foreach($authors as $author)
-    <tr>
-      <td class="text1">{{$author->create_at}}</td>
-      <td class="text2">{{$author->task}}</td>
-    </tr>
-    @endforeach
-    <tr>
-      <td class="text3">
-        <form action="/edit" method="post">
-          <input class="update_btn" type="submit" value="更新">
-        </form>
-      </td>
-      <td class="text4">
-        <form action="/delete" method="post">
-          <input class="remove_btn" type="submit" value="削除">
-        </form>
-      </td>
-    </tr>
-  </table> 
+  <div class="contact">
+    <table class="contact_form">
+      <tr>
+        <th class="list1">作成日</th>
+        <th class="list2">タスク名</th>
+        <th class="list3">更新</th>
+        <th class="list4">削除</th>
+      </tr>
+      @foreach($authors as $author)
+      <tr>
+        <td class="text1">{{$author->create_at}}</td>
+        <td class="text2">
+          {{$author->task}}
+          <form action="/add" method="post">
+            <input class="content" type="text" name="name2">
+        </td>
+        <td class="text3">
+          <form action="/edit" method="post">
+            <input class="update_btn" type="submit" value="更新">
+          </form>
+        </td>
+        <td class="text4">
+          <form action="/delete" method="post">
+            <input class="remove_btn" type="submit" value="削除">
+          </form>
+        </td>
+      </tr>
+      @endforeach
+    </table>
+  </div>
 </body>
 </html>
 
