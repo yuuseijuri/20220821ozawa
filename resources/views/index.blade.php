@@ -111,7 +111,7 @@
     @endif 
       <form action="/add" method="post">
       @csrf
-        <input class="content" type="text" name="authors">
+        <input class="content" type="text" name="task">
         <input class="create_btn" type="submit" value="追加">
       </form>
   </div>
