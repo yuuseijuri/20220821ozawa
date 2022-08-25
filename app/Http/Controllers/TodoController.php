@@ -4,20 +4,20 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\models\Todo;
-use App\Http\Requests\AuthorRequest;
+use App\Http\Requests\TodoRequest;
 
 class TodoController extends Controller
 {
     public function index() {
-        $authors = Todo::all();
-        return view('index', ['authors' => $authors]);
+        $todos = Todo::all();
+        return view('index', ['task' => $todos]);
     }
-    public function create(AuthorRequest $request) {
+    public function create(TodoRequest $request) {
         $form = $request->task();
         Todo::create($form);
         return redirect('/');
     }
-    public function update(AuthorRequest $request) {
+    public function update(TodoRequest $request) {
         $form = $request->task();
         Todo::where('id', $request->id)->update($form);
         unset($form['_token']);
