@@ -109,9 +109,9 @@
         @endforeach
       </ul>
     @endif 
-      <form action="/add" method="post">
+      <form action="/" method="get">
       @csrf
-        <input class="content" type="text" name="name1">
+        <input class="content" type="text" name="authors">
         <input class="create_btn" type="submit" value="追加">
       </form>
   </div>
@@ -129,7 +129,7 @@
         <td class="text2">
           {{$author->task}}
           <form action="/add" method="post">
-            <input class="content" type="text" name="name2">
+            <input class="content" type="text" name="authors">
         </td>
         <td class="text3">
           <form action="/edit" method="post">
