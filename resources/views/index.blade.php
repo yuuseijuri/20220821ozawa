@@ -109,7 +109,7 @@
         @endforeach
       </ul>
     @endif 
-      <form action="/" method="get">
+      <form action="/add" method="post">
       @csrf
         <input class="content" type="text" name="authors">
         <input class="create_btn" type="submit" value="追加">
