@@ -10,7 +10,7 @@ class TodoController extends Controller
 {
     public function index() {
         $todos = Todo::all();
-        return view('index', ['task' => $todos]);
+        return view('index', ['todos' => $todos]);
     }
     public function create(TodoRequest $request) {
         $form = $request->all();
@@ -18,7 +18,7 @@ class TodoController extends Controller
         return redirect('/');
     }
     public function update(TodoRequest $request) {
-        $form = $request->task();
+        $form = $request->all();
         Todo::where('id', $request->id)->update($form);
         unset($form['_token']);
         return redirect('/');

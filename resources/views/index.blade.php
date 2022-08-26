@@ -48,31 +48,46 @@
     }
     .contact {
       width: 100%;
-      height: 60%;
-      
     }
     .contact_form {
       width: 100%;
       margin-top: 25px;
-      
     }
     .list1 {
       width: 30%;
       padding: 5px;
       text-align: center;
-      
     }
     .list2 {
       width: 50%;
       text-align: center;
-      
     }
     .list3, .list4 {
       width: 10%;
       text-align: center;
     }
-    
-    
+    .text1 {
+      width: 30%;
+      padding: 5px;
+      text-align: center;
+    }
+    .text2 {
+      width: 50%;
+      text-align: center;
+    }
+    .text3 {
+      width: 10%;
+      text-align: center;
+      margin-right: 15px;
+    }
+    .text4 {
+      width: 10%;
+      text-align: center;
+    }
+    .content2 {
+      width: 80%;
+      text-align: center;
+    }
     .update_btn {
       border: 2px solid #FFA500;
       border-radius: 5px;
@@ -80,9 +95,7 @@
       font-size: 12px;
       font-weight: bold;
       padding: 8px 16px;
-      transition: 0.5s;
-      
-      
+      transition: 0.5s; 
     }
     .remove_btn {
       border: 2px solid #00FF00;
@@ -92,8 +105,6 @@
       font-weight: bold;
       padding: 8px 16px;
       transition: 0.5s;
-      
-      
     }
   </style>
 </head>
@@ -123,13 +134,12 @@
         <th class="list3">更新</th>
         <th class="list4">削除</th>
       </tr>
-      @foreach($todos as $task)
+      @foreach($todos as $todo)
       <tr>
-        <td class="text1">{{$task->created_at}}</td>
-        <td class="text2">
-          {{$task->task}}
+        <td class="text1">{{$todo->created_at}}</td>
+        <td class="text2">{{$todo->task}}
           <form action="/add" method="post">
-            <input class="content" type="text" name="task">
+            <input class="content2" type="text" name="task">
         </td>
         <td class="text3">
           <form action="/edit" method="post">
