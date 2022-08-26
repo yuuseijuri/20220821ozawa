@@ -86,7 +86,12 @@
     }
     .content2 {
       width: 80%;
-      text-align: center;
+      padding: 5px;
+      border: 1px solid #778899;
+      border-radius: 5px;
+      font-size: 14px;
+      text-align: left;
+      
     }
     .update_btn {
       border: 2px solid #FFA500;
@@ -137,9 +142,9 @@
       @foreach($todos as $todo)
       <tr>
         <td class="text1">{{$todo->created_at}}</td>
-        <td class="text2">{{$todo->task}}
+        <td class="text2">
           <form action="/add" method="post">
-            <input class="content2" type="text" name="task">
+            <input class="content2" type="text" name="task" value="{{$todo->task}}">
         </td>
         <td class="text3">
           <form action="/edit" method="post">
