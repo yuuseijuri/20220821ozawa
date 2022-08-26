@@ -13,7 +13,7 @@ class TodoController extends Controller
         return view('index', ['task' => $todos]);
     }
     public function create(TodoRequest $request) {
-        $form = $request->task();
+        $form = $request->all();
         Todo::create($form);
         return redirect('/');
     }

@@ -123,11 +123,11 @@
         <th class="list3">更新</th>
         <th class="list4">削除</th>
       </tr>
-      @foreach($todos as $todo)
+      @foreach($todos as $task)
       <tr>
-        <td class="text1">{{$todo->created_at}}</td>
+        <td class="text1">{{$task->created_at}}</td>
         <td class="text2">
-          {{$todo->task}}
+          {{$task->task}}
           <form action="/add" method="post">
             <input class="content" type="text" name="task">
         </td>
