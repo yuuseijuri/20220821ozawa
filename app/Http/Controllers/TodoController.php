@@ -24,7 +24,7 @@ class TodoController extends Controller
         return redirect('/');
     }
     public function remove(Request $request) {
-        Todo::find($request->id)->delete();
+        Todo::find('id', $request->id)->delete();
         return redirect('/');
     }
 }

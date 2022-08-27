@@ -144,15 +144,18 @@
         <td class="text1">{{$todo->created_at}}</td>
         <td class="text2">
           <form action="/add" method="post">
+          @csrf
             <input class="content2" type="text" name="task" value="{{$todo->task}}">
         </td>
         <td class="text3">
           <form action="/edit" method="post">
+          @csrf
             <input class="update_btn" type="submit" value="更新">
           </form>
         </td>
         <td class="text4">
           <form action="/delete" method="post">
+          @csrf
             <input class="remove_btn" type="submit" value="削除">
           </form>
         </td>
