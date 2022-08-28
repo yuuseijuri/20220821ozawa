@@ -16,7 +16,6 @@
     .message {
       background-color: white;
       width: 50vw;
-      height: 35vh;
       padding: 30px;
       position: absolute;
       top: 50%;
@@ -131,7 +130,7 @@
         <input class="create_btn" type="submit" value="追加">
       </form>
   </div>
-  <div class="contact">
+  <div class="contact">  
     <table class="contact_form">
       <tr>
         <th class="list1">作成日</th>
@@ -154,7 +153,7 @@
           </form>
         </td>
         <td class="text4">
-          <form action="/delete" method="post">
+          <form action="/delete($request->id)" method="post">
           @csrf
             <input class="remove_btn" type="submit" value="削除">
           </form>
