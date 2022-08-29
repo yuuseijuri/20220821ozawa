@@ -153,7 +153,7 @@
           </form>
         </td>
         <td class="text4">
-          <form action="/delete($request->id)" method="post">
+          <form action="{'/delete?'}/{todos_id}" method="post">
           @csrf
             <input class="remove_btn" type="submit" value="削除">
           </form>
