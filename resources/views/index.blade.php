@@ -28,6 +28,10 @@
       font-weight: bold;
       margin-bottom: 15px;
     }
+    ul {
+      list-style: none;
+      display: flex;
+    }
     .content {
       width: 40vw;
       padding: 5px;
@@ -36,7 +40,7 @@
       font-size: 14px;
     }
     .create_btn {
-      margin-left: 70px;
+      margin-left: 30px;
       border: 2px solid #FF00FF;
       border-radius: 5px;
       color: #FF00FF;
@@ -125,8 +129,14 @@
     @endif 
       <form action="/add" method="post">
       @csrf
-        <input class="content" type="text" name="task">
-        <input class="create_btn" type="submit" value="追加">
+        <ul>
+          <li>
+            <input class="content" type="text" name="task">
+          </li>
+          <li>
+            <input class="create_btn" type="submit" value="追加">
+          </li>
+        </ul>
       </form>
   </div>
   <div class="contact">  
