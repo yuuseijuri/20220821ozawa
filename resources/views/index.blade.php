@@ -142,7 +142,7 @@
       <tr>
         <td class="text1">{{$todo->created_at}}</td>
         <td class="text3">
-          <form action="/edit" method="post">
+          <form action="{{ route('edit', ['id' => {todos}]) }}" method="post">
           @csrf
             <input class="content2" type="text" name="task" value="{{$todo->task}}">
             <input class="update_btn" type="submit" value="更新">
