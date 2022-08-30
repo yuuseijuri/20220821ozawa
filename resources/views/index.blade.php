@@ -73,13 +73,11 @@
     .text2 {
       width: 50%;
       text-align: center;
-      margin-right: 15px;
-      
+      margin-right: 10px;
     }
     .text3 {
       width: 10%;
       text-align: center; 
-      
     }
     .text4 {
       width: 10%;
@@ -100,8 +98,7 @@
       font-size: 12px;
       font-weight: bold;
       padding: 8px 16px;
-      transition: 0.5s; 
-      
+      transition: 0.5s;
     }
     .remove_btn {
       border: 2px solid #00FF00;
@@ -143,16 +140,17 @@
       @foreach($todos as $todo)
       <tr>
         <td class="text1">{{$todo->created_at}}</td>
-        <td class="text2">
-          <form action="{{ route('edit', ['id' => $todo->id]) }}" method="post">
-          @csrf
+        <form action="{{ route('edit', ['id' => $todo->id]) }}" method="post">
+        @csrf
+          <td class="text2">
             <input class="content2" type="text" name="task" value="{{$todo->task}}">
+          </td>
+          <td class="text3">
             <input class="update_btn" type="submit" value="更新">
-          </form>
-        </td>
-        <td></td>
+          </td>  
+        </form>
         <td class="text4">
-          <form action="{'/delete?'}/{todos_id}" method="post">
+          <form action="{{route('delete', ['id' => $todo->id])}}" method="post">
           @csrf
             <input class="remove_btn" type="submit" value="削除">
           </form>
