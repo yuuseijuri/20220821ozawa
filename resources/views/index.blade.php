@@ -73,15 +73,17 @@
     .text2 {
       width: 50%;
       text-align: center;
+      margin-right: 15px;
+      
     }
     .text3 {
       width: 10%;
-      text-align: center;
-      margin-right: 15px;
+      text-align: center; 
+      
     }
     .text4 {
       width: 10%;
-      text-align: center;
+      text-align: center; 
     }
     .content2 {
       width: 80%;
@@ -90,7 +92,6 @@
       border-radius: 5px;
       font-size: 14px;
       text-align: left;
-      
     }
     .update_btn {
       border: 2px solid #FFA500;
@@ -100,6 +101,7 @@
       font-weight: bold;
       padding: 8px 16px;
       transition: 0.5s; 
+      
     }
     .remove_btn {
       border: 2px solid #00FF00;
@@ -116,7 +118,7 @@
   <div class="container"></div>
   <div class="message">
     <h1>Todo List</h1>
-    <div class="message_msg">
+    <div class="">
     @if(count($errors) > 0)
       <ul>
         @foreach($errors->all() as $error)
@@ -141,13 +143,14 @@
       @foreach($todos as $todo)
       <tr>
         <td class="text1">{{$todo->created_at}}</td>
-        <td class="text3">
-          <form action="{{ route('edit', ['id' => {todos}]) }}" method="post">
+        <td class="text2">
+          <form action="{{ route('edit', ['id' => $todo->id]) }}" method="post">
           @csrf
             <input class="content2" type="text" name="task" value="{{$todo->task}}">
             <input class="update_btn" type="submit" value="更新">
           </form>
         </td>
+        <td></td>
         <td class="text4">
           <form action="{'/delete?'}/{todos_id}" method="post">
           @csrf
